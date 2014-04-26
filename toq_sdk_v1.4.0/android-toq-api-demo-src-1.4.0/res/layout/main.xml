@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013 Qualcomm Connected Experiences, Inc, All rights reserved
+-->
+<RelativeLayout android:id="@+id/RelativeLayout01" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_above="@+id/status_panel" 
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+    
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"                
+                android:text="@string/doc_panel"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            
+            <LinearLayout
+                android:id="@+id/doc_panel"
+                android:layout_margin="5dp"                                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" > 
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"                    
+                    android:text="@string/doc_card1_text"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/doc_header_text" />
+
+                        <EditText
+                            android:id="@+id/doc1_header_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+                    
+                    </TableRow>
+                
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/title_text" />
+
+                        <EditText
+                            android:id="@+id/doc1_title_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                  
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/message_text" />
+
+                        <EditText
+                            android:id="@+id/doc1_message_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/info_text" />
+
+                        <EditText
+                            android:id="@+id/doc1_info_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/events_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc1_events_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/menu_options_text" />
+
+                        <EditText
+                            android:id="@+id/doc1_menu_options_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/divider_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc1_divider_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                </TableLayout>
+                
+                <View
+                    android:background="@drawable/divider"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="20dp"       
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"                
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doc_card2_text"
+                    android:layout_marginTop="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />               
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/doc_header_text" />
+
+                        <EditText
+                            android:id="@+id/doc2_header_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+                    
+                    </TableRow>
+                
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/title_text" />
+
+                        <EditText
+                            android:id="@+id/doc2_title_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                  
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/message_text" />
+
+                        <EditText
+                            android:id="@+id/doc2_message_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/info_text" />
+
+                        <EditText
+                            android:id="@+id/doc2_info_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/events_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc2_events_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/menu_options_text" />
+
+                        <EditText
+                            android:id="@+id/doc2_menu_options_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/divider_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc2_divider_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                </TableLayout>
+                
+                <View
+                    android:background="@drawable/divider"
+                    android:layout_width="fill_parent"
+                    android:layout_marginLeft="20dp"       
+                    android:layout_marginRight="20dp"                
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"                
+                    android:layout_height="1dp" />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doc_card3_text"
+                    android:layout_marginTop="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />               
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/doc_header_text" />
+
+                        <EditText
+                            android:id="@+id/doc3_header_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+                    
+                    </TableRow>
+                
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/title_text" />
+
+                        <EditText
+                            android:id="@+id/doc3_title_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                  
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/message_text" />
+
+                        <EditText
+                            android:id="@+id/doc3_message_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/info_text" />
+
+                        <EditText
+                            android:id="@+id/doc3_info_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/events_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc3_events_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/menu_options_text" />
+
+                        <EditText
+                            android:id="@+id/doc3_menu_options_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/divider_text" />
+
+                        <CheckBox
+                            android:id="@+id/doc3_divider_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                </TableLayout>
+                
+                <LinearLayout
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp" >
+
+                    <Button
+                        android:id="@+id/doc_install_button"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"                    
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"                                    
+                        android:text="@string/doc_install_button" />
+
+                    <Button
+                        android:id="@+id/doc_update_button"
+                        style="?android:attr/buttonStyleSmall"           
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"                                          
+                        android:text="@string/doc_update_button" />
+
+                    <Button
+                        android:id="@+id/doc_uninstall_button"
+                        style="?android:attr/buttonStyleSmall"           
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"                    
+                        android:text="@string/doc_uninstall_button" />
+                    
+                </LinearLayout>           
+                
+            </LinearLayout>           
+            
+            <View
+                android:background="@drawable/divider"
+                android:layout_width="fill_parent"               
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"                
+                android:layout_height="1dp" />
+    
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/notification_panel"
+                android:textAppearance="?android:attr/textAppearanceLarge" />    
+
+            <LinearLayout
+                android:id="@+id/notification_panel" 
+                android:layout_margin="5dp"               
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >        
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/title_text" />
+
+                        <EditText
+                            android:id="@+id/notification_title_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+                    
+                    </TableRow>
+                
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/message_text" />
+
+                        <EditText
+                            android:id="@+id/notification_message_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/info_text" />
+
+                        <EditText
+                            android:id="@+id/notification_info_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"                       
+                            android:inputType="text"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/events_text" />
+
+                        <CheckBox
+                            android:id="@+id/notification_events_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/menu_options_text" />
+
+                        <EditText
+                            android:id="@+id/notification_menu_options_text"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:lines="3"
+                            android:minLines="3"
+                            android:maxLines="3"                                                           
+                            android:inputType="textMultiLine"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/divider_text" />
+
+                        <CheckBox
+                            android:id="@+id/notification_divider_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="right|center_vertical" 
+                            android:layout_marginRight="10dp"                                                    
+                            android:text="@string/notification_vibe_text" />
+
+                        <CheckBox
+                            android:id="@+id/notification_vibe_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"/>
+
+                    </TableRow>
+                    
+                </TableLayout>
+
+                <Button
+                    android:id="@+id/send_notification_button"
+                    style="?android:attr/buttonStyleSmall"            
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"                    
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/send_notification_button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        
+    </ScrollView>   
+    
+    <LinearLayout 
+        android:id="@+id/status_panel"         
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent" 
+        android:layout_marginTop="5dp"       
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        
+        <View
+            android:background="@drawable/divider"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"                
+            android:layout_height="2dp" />   
+        
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"          
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+</RelativeLayout>

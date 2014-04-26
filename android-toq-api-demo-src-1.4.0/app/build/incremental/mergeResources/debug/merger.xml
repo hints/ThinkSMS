@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res" >
+            <file
+                name="ic_launcher"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi"
+                type="drawable" />
+            <file
+                name="divider"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/drawable-mdpi/divider.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi"
+                type="drawable" />
+            <file
+                name="main"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/layout/main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="error_connecting_to_service" >Error connecting to Toq app service
+                </string>
+                <string name="notification_vibe_text" >Vibe Alert:
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="divider_text" >Show Divider:
+                </string>
+                <string name="menu_options_text" >Menu Options:
+                </string>
+                <string name="error_checking_status" >Error checking if Toq watch is connected or deck of cards is installed
+                </string>
+                <string name="doc_install_button" >Install
+                </string>
+                <string name="status_uninstalled" >Deck of cards uninstalled
+                </string>
+                <string name="event_card_open" >"Card open: "
+                </string>
+                <string name="status_connecting" >Connecting…
+                </string>
+                <string name="send_notification_button" >Send
+                </string>
+                <string name="event_card_closed" >"Card closed: "
+                </string>
+                <string name="notification_panel" >Notification
+                </string>
+                <string name="error_uninstalling_deck_of_cards" >Error uninstalling deck of cards applet
+                </string>
+                <string name="event_card_invisible" >"Card invisible: "
+                </string>
+                <string name="doc_uninstall_button" >Uninstall
+                </string>
+                <string name="status_installation_successful" >Deck of cards installed successfully
+                </string>
+                <string name="event_menu_option_selected" >"Menu option selected: "
+                </string>
+                <string name="doc_update_button" >Update
+                </string>
+                <string name="doc_card1_text" >Card #1
+                </string>
+                <string name="doc_panel" >Deck Of Cards
+                </string>
+                <string name="events_text" >Receive Events:
+                </string>
+                <string name="info_text" >Info:
+                </string>
+                <string name="doc_card2_text" >Card #2
+                </string>
+                <string name="intent_toq_watch_disconnected" >Toq watch is disconnected from Toq app
+                </string>
+                <string name="status_disconnected" >Disconnected from Toq app service
+                </string>
+                <string name="doc_header_text" >Header:
+                </string>
+                <string name="message_text" >Message:
+                </string>
+                <string name="error_initialising_deck_of_cards" >Error occurred initialising the deck of cards
+                </string>
+                <string name="event_card_visible" >"Card visible: "
+                </string>
+                <string name="status_connected" >Connected to Toq app service
+                </string>
+                <string name="error_updating_deck_of_cards" >Error updating deck of cards applet
+                </string>
+                <string name="app_name" >Qualcomm Toq API Demo
+                </string>
+                <string name="title_text" >Title:
+                </string>
+                <string name="error_sending_notification" >Error sending notification
+                </string>
+                <string name="error_installing_deck_of_cards" >Error installing deck of cards applet
+                </string>
+                <string name="status_installation_denied" >Deck of cards installation denied
+                </string>
+                <string name="doc_card3_text" >Card #3
+                </string>
+                <string name="intent_toq_watch_connected" >Toq watch is connected to Toq app
+                </string>
+            </file>
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/build/res/rs/debug" />
+        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/build/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/debug/res" />
+    </dataSet>
+
+</merger>

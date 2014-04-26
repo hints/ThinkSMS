@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2013 Qualcomm Connected Experiences, Inc, All rights reserved
+-->
+<resources>
+
+    <string name="app_name">Qualcomm Toq API Demo</string>
+    <string name="action_settings">Settings</string>  
+    <string name="title_text">Title:</string>
+    <string name="message_text">Message:</string> 
+    <string name="info_text">Info:</string>     
+    <string name="events_text">Receive Events:</string>
+    <string name="menu_options_text">Menu Options:</string>  
+    <string name="divider_text">Show Divider:</string>
+    <string name="notification_panel">Notification</string>
+    <string name="notification_vibe_text">Vibe Alert:</string>   
+    <string name="send_notification_button">Send</string>   
+    <string name="doc_panel">Deck Of Cards</string>
+    <string name="doc_header_text">Header:</string>
+    <string name="doc_card1_text">Card #1</string>
+    <string name="doc_card2_text">Card #2</string>
+    <string name="doc_card3_text">Card #3</string> 
+    <string name="doc_install_button">Install</string>
+    <string name="doc_update_button">Update</string>
+    <string name="doc_uninstall_button">Uninstall</string>
+    <string name="status_connecting">Connecting&#8230;</string>
+    <string name="status_disconnected">Disconnected from Toq app service</string>
+    <string name="status_installation_successful">Deck of cards installed successfully</string>
+    <string name="status_installation_denied">Deck of cards installation denied</string>
+    <string name="status_connected">Connected to Toq app service</string>
+    <string name="status_uninstalled">Deck of cards uninstalled</string>
+    <string name="intent_toq_watch_connected">Toq watch is connected to Toq app</string>
+    <string name="intent_toq_watch_disconnected">Toq watch is disconnected from Toq app</string>
+    <string name="event_card_open">"Card open: "</string>
+    <string name="event_card_visible">"Card visible: "</string>
+    <string name="event_card_invisible">"Card invisible: "</string>
+    <string name="event_card_closed">"Card closed: "</string>
+    <string name="event_menu_option_selected">"Menu option selected: "</string>
+    <string name="error_connecting_to_service">Error connecting to Toq app service</string>
+    <string name="error_checking_status">Error checking if Toq watch is connected or deck of cards is installed</string>    
+    <string name="error_initialising_deck_of_cards">Error occurred initialising the deck of cards</string>
+    <string name="error_installing_deck_of_cards">Error installing deck of cards applet</string>
+    <string name="error_updating_deck_of_cards">Error updating deck of cards applet</string>
+    <string name="error_uninstalling_deck_of_cards">Error uninstalling deck of cards applet</string>
+    <string name="error_sending_notification">Error sending notification</string>
+    
+</resources>
