@@ -1,0 +1,26 @@
+<!--
+  Copyright (c) 2013 Qualcomm Connected Experiences, Inc, All rights reserved
+-->
+<!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="140" android:versionName="1.4.0" package="com.qualcomm.toq.smartwatch.api.v1.deckofcards.demo">
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.qualcomm.toq.smartwatch.api.v1.deckofcards.demo.ToqApiDemo" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <receiver android:enabled="true" android:exported="true" android:name="com.qualcomm.toq.smartwatch.api.v1.deckofcards.demo.ToqAppletInstallationBroadcastReceiver">            
+            <intent-filter>
+                <action android:name="com.qualcomm.toq.smartwatch.install.applet"/>
+            </intent-filter>
+        </receiver>
+        
+    </application>
+
+</manifest>

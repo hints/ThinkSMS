@@ -1,0 +1,13 @@
+<!--
+  Copyright (c) 2013 Qualcomm Connected Experiences, Inc, All rights reserved
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>
+<!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/menu/main.xml -->
