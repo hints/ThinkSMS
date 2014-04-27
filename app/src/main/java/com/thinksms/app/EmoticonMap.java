@@ -65,6 +65,17 @@ public class EmoticonMap {
     }
 
 
+    public static String intentForEmoticon(String emoticon) {
+        int index = indexForEmoticon(emoticon);
+        if (index == -1) {
+            return "Hello";
+        }
+        else {
+            return intents[index];
+        }
+    }
+
+
     public static String emoticonForIntent(String intent) {
         int index = indexForIntent(intent);
         if (index == -1) {

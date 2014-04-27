@@ -153,11 +153,47 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     public void setEmotionState(EmotionState state) {
         emotionState = state;
         ((TextView)findViewById(R.id.emoticonText)).setText(state.emoticon);
+
+        if (!this.doNotDisturb()) {
+            MessageQueue.getInstance().deliverPendingMessagesOnUIThread();
+        }
+    }
+
+
+    public void popEmotionState() {
+        Log.d(TAG, "Pop pending emotion state, if any");
     }
 
 
     public EmotionState getEmotionState() {
         return emotionState;
+    }
+
+
+    public Boolean quietMode() {
+        Boolean quietMode = false;
+        EmotionState state = getEmotionState();
+        if (state != null) {
+            if ("Tired".equals(state.intent)) {
+                quietMode = true;
+            }
+        }
+        return quietMode;
+    }
+
+
+    public Boolean doNotDisturb() {
+        Boolean doNotDisturb = false;
+        EmotionState state = getEmotionState();
+        if (state != null) {
+            if ("Sleeping".equals(state.intent)) {
+                doNotDisturb = true;
+            }
+            else if ("Busy".equals(state.intent)) {
+                doNotDisturb = true;
+            }
+        }
+        return doNotDisturb;
     }
 
 

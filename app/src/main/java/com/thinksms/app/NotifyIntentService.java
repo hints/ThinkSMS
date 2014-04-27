@@ -37,6 +37,7 @@ public class NotifyIntentService extends IntentService {
         intent.setAction(ACTION_NOTIFY);
         intent.putExtra(EXTRA_PARAM_TEXT, text);
         intent.putExtra(EXTRA_PARAM_EMOTICON, emoticon);
+        // Start immediately
         context.startService(intent);
     }
 
@@ -81,6 +82,9 @@ public class NotifyIntentService extends IntentService {
                         .setContentIntent(viewPendingIntent)
                         .setStyle(bigStyle);
 
+        if (!ChatActivity.getInstance().quietMode()) {
+            notificationBuilder.setVibrate(new long[] { 1000, 1000, 1000 });
+        }
 // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(getApplicationContext());
@@ -101,20 +105,6 @@ public class NotifyIntentService extends IntentService {
                 message // splitString(((EditText)findViewById(R.id.notification_message_text)).getText().toString())
         );
 
-        Boolean doNotDisturb = true;
-        EmotionState state = ChatActivity.getInstance().getEmotionState();
-        if (state != null) {
-            if ("Tired".equals(state.intent)) {
-                doNotDisturb = doNotDisturb;
-            }
-            else if ("Sleeping".equals(state.intent)) {
-                doNotDisturb = doNotDisturb;
-            }
-            else if ("Busy".equals(state.intent)) {
-                doNotDisturb = doNotDisturb;
-            }
-
-        }
         notificationCard.setInfoText(text);
 
         String menuOptions [] = {"Reply"};
@@ -122,7 +112,7 @@ public class NotifyIntentService extends IntentService {
         notificationCard.setReceivingEvents(true);
         notificationCard.setShowDivider(false);
         // notificationCard.setShowDivider(((CheckBox)findViewById(R.id.notification_divider_checkbox)).isChecked());
-        notificationCard.setVibeAlert(!doNotDisturb);
+        notificationCard.setVibeAlert(!ChatActivity.getInstance().quietMode());
 
         RemoteToqNotification notification= new RemoteToqNotification(this, notificationCard);
 
