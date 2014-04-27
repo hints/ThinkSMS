@@ -32,8 +32,9 @@ public class MessageReceiver extends BroadcastReceiver {
             JSONObject dataObject = json.getJSONObject("data");
 
             String text = dataObject.getString("text");
+            String emoticon = dataObject.getString("emoticon");
 
-            NotifyIntentService.presentNotificationForMessage(context, text);
+            NotifyIntentService.presentNotificationForMessage(context, text, emoticon);
         }
         catch (JSONException e) {
             Log.d(TAG, "JSONException: " + e.getMessage());

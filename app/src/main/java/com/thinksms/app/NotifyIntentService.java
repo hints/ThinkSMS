@@ -20,11 +20,13 @@ public class NotifyIntentService extends IntentService {
 
     // TODO: Rename parameters
     private static final String EXTRA_PARAM_TEXT = "com.thinksms.app.extra.TEXT";
+    private static final String EXTRA_PARAM_EMOTICON = "com.thinksms.app.extra.EMOTICON";
 
-    public static void presentNotificationForMessage(Context context, String text) {
+    public static void presentNotificationForMessage(Context context, String text, String emoticon) {
         Intent intent = new Intent(context, NotifyIntentService.class);
         intent.setAction(ACTION_NOTIFY);
         intent.putExtra(EXTRA_PARAM_TEXT, text);
+        intent.putExtra(EXTRA_PARAM_EMOTICON, emoticon);
         context.startService(intent);
     }
 
@@ -38,16 +40,15 @@ public class NotifyIntentService extends IntentService {
             final String action = intent.getAction();
             if (ACTION_NOTIFY.equals(action)) {
                 final String text = intent.getStringExtra(EXTRA_PARAM_TEXT);
-                handlePresentNotification(text);
+                final String emoticon = intent.getStringExtra(EXTRA_PARAM_EMOTICON);
+                presentNativeNotification(text, emoticon);
+                presentToqNotification(text, emoticon);
             }
         }
     }
 
-    private void handlePresentNotification(String text) {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
 
-    private void presentNativeNotification(Message message) {
+    private void presentNativeNotification(String text, String emoticon) {
         Time now = new Time();
         now.setToNow();
         int notificationId = (int)(now.toMillis(true) / 1000); // This is a hack
@@ -57,14 +58,14 @@ public class NotifyIntentService extends IntentService {
         PendingIntent viewPendingIntent =
                 PendingIntent.getActivity(getApplicationContext(), 0, viewIntent, 0);
         NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
-        bigStyle.bigText(message.text);
+        bigStyle.bigText(text);
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(getApplicationContext())
                         .setSmallIcon(R.drawable.ic_launcher)
 //                        .setLargeIcon(placeBitmap)
-                        .setContentTitle(message.getEmoticon())
-                        .setContentText(message.text)
+                        .setContentTitle(emoticon)
+                        .setContentText(text)
                         .setContentIntent(viewPendingIntent)
                         .setStyle(bigStyle);
 
@@ -76,7 +77,7 @@ public class NotifyIntentService extends IntentService {
         notificationManager.notify(notificationId, notificationBuilder.build());
     }
 
-    private void presentToqNotification(Message message) {
+    private void presentToqNotification(String text, String emoticon) {
 
     }
 }

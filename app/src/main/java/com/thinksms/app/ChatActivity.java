@@ -23,7 +23,9 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import ai.wit.sdk.IWitListener;
 import ai.wit.sdk.Wit;
@@ -282,6 +284,10 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         ((TextView) findViewById(R.id.jsonView)).setText(Html.fromHtml("<span><b>Intent: " + intent +
                 "<b></span><br/>") + jsonOutput +
                 Html.fromHtml("<br/><span><b>Confidence: " + confidence + "<b></span>"));
+
+        List<String> messageTraits = new ArrayList<String>();
+        Message message = new Message(body, messageTraits);
+        message.send();  // Send the message as a push notification
     }
 
 

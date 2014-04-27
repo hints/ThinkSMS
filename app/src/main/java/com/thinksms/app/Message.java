@@ -43,9 +43,11 @@ public class Message {
 
         JSONObject data = new JSONObject();
         try {
+            JSONObject dataFields = new JSONObject();
             data.put("action", "com.thinksms.app.MESSAGE_RECEIVED");
-            data.put("text", text);
-            data.put("emoticon", getEmoticon());
+            dataFields.put("text", text);
+            dataFields.put("emoticon", getEmoticon());
+            data.put("data", dataFields);
             ParseQuery<ParseInstallation> allInstallations = ParseInstallation.getQuery(); // <-- Installation query
             ParsePush push = new ParsePush();
             push.setQuery(allInstallations);
