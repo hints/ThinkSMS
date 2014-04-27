@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
     <permission
         android:name="com.thinksms.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
@@ -16,6 +17,7 @@
     <uses-permission android:name="com.thinksms.app.permission.C2D_MESSAGE" />
 
     <application
+        android:name="com.thinksms.app.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -48,23 +50,18 @@
                 <category android:name="com.thinksms.app" />
             </intent-filter>
         </receiver>
- <!--       <receiver
+        <receiver
             android:name="com.thinksms.app.MessageReceiver"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.weaver.app.MESSAGE_RECEIVED" />
+                <action android:name="com.thinksms.app.MESSAGE_RECEIVED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.weaver.app.FetchStoryIntentService"
+            android:name="com.thinksms.app.NotifyIntentService"
             android:exported="false" >
         </service>
-        <service
-            android:name="com.weaver.app.MyIntentService"
-            android:exported="false" >
-        </service>
--->
     </application>
 
 </manifest>
