@@ -22,6 +22,8 @@ public class MessageReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(TAG, "Message Received");
+
         try {
             String action = intent.getAction();
             String channel = intent.getExtras().getString("com.parse.Channel");
