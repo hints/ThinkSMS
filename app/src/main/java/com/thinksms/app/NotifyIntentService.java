@@ -74,7 +74,7 @@ public class NotifyIntentService extends IntentService {
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(getApplicationContext())
-                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setSmallIcon(smallIcon)
 //                        .setLargeIcon(placeBitmap)
                         .setContentTitle(emoticon)
                         .setContentText(text)
