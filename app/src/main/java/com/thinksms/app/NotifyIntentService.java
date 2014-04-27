@@ -115,6 +115,7 @@ public class NotifyIntentService extends IntentService {
             }
         }
         notificationCard.setInfoText(text);
+
         String menuOptions [] = {"Reply"};
         notificationCard.setMenuOptions(menuOptions);
         notificationCard.setReceivingEvents(true);

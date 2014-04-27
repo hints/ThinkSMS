@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="action_settings">Settings</string>
@@ -48,7 +48,7 @@
     <string name="status_installation_successful">Deck of cards installed successfully</string>
     <string name="status_uninstalled">Deck of cards uninstalled</string>
     <string name="title_text">Title:</string>
-    <!-- From: file:/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
     <style name="AppBaseTheme" parent="android:Theme.Light">

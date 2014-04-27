@@ -48,6 +48,8 @@ import com.qualcomm.toq.smartwatch.api.v1.deckofcards.util.ParcelableUtil;
 public class ChatActivity extends ActionBarActivity implements IWitListener {
     private static final String TAG = "ChatActivity";
 
+    public static Wit WIT_FRAG = null;
+
     private final static String DEMO_PREFS_FILE= "demo_prefs_file";
     private final static String DECK_OF_CARDS_KEY= "deck_of_cards_key";
     private final static String DECK_OF_CARDS_VERSION_KEY= "deck_of_cards_version_key";
@@ -75,10 +77,11 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         setContentView(R.layout.activity_chat);
         this.instance = this;
 
+        PlaceholderFragment holder = new PlaceholderFragment();
         setEmotionState(new EmotionState());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, holder)
                     .commit();
         }
 
@@ -89,7 +92,7 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
         // Create listeners
         deckOfCardsManagerListener= new DeckOfCardsManagerListenerImpl();
-        deckOfCardsEventListener= new DeckOfCardsEventListenerImpl();
+        deckOfCardsEventListener= new DeckOfCardsEventListenerImpl(holder.wit_fragment);
         initDeckOfCards();
     }
 
@@ -191,6 +194,23 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
             // Re-add the icons
             deckOfCards.setLauncherIcons(resourceStore, new DeckOfCardsLauncherIcon[]{whiteIcon, colorIcon});
+
+            /*
+            ListCard listCard= deckOfCards.getListCard();
+
+            // Notification
+            ((EditText)findViewById(R.id.notification_title_text)).setText("Emoji");
+            ((EditText)findViewById(R.id.notification_message_text)).setText(concatStrings(new String[]{"Hello World"}));
+            ((EditText)findViewById(R.id.notification_info_text)).setText("99");
+            ((CheckBox)findViewById(R.id.notification_events_checkbox)).setChecked(true);
+            ((EditText)findViewById(R.id.notification_menu_options_text)).setText(concatStrings(new String[]{"Reply"}));
+            ((CheckBox)findViewById(R.id.notification_divider_checkbox)).setChecked(true);
+            ((CheckBox)findViewById(R.id.notification_vibe_checkbox)).setChecked(true);
+
+            // Status
+            statusTextView= (TextView)findViewById(R.id.status_text);
+            statusTextView.setText("Initialised");
+            */
 
         }
         catch (Exception e){
@@ -348,7 +368,10 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        public Wit wit_fragment = null;
+
         public PlaceholderFragment() {
+            // Wit wit_fragment = (Wit) getFragmentManager().findFragmentByTag("wit_fragment");
         }
 
         @Override
@@ -358,6 +381,8 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
             // Initialize Fragment
             Wit wit_fragment = (Wit) getFragmentManager().findFragmentByTag("wit_fragment");
+            ChatActivity.WIT_FRAG = wit_fragment;
+
             if (wit_fragment != null) {
                 wit_fragment.setAccessToken("RNYDQYNPJ3XZUIG5HLAVG7YBP6XHRQ5I");
             }
@@ -369,15 +394,14 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
     // Handle service connection lifecycle and installation events
     private class DeckOfCardsManagerListenerImpl implements DeckOfCardsManagerListener {
-
         /**
          * @see com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.DeckOfCardsManagerListener#onConnected()
          */
         public void onConnected() {
             runOnUiThread(new Runnable(){
                 public void run(){
-                    Log.d(TAG, "Connected!!!");
-                    //installDeckOfCards();
+            Log.d(TAG, "Connected!!!");
+            installDeckOfCards();
 //                    setStatus(getString(R.string.status_connected));
 //                    refreshUI();
                 }
@@ -438,6 +462,11 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     // Handle card events triggered by the user interacting with a card in the installed deck of cards
     private class DeckOfCardsEventListenerImpl implements DeckOfCardsEventListener {
 
+        public Wit wit_fragment = null;
+        public DeckOfCardsEventListenerImpl(Wit wf) {
+            this.wit_fragment = wf;
+        }
+
         /**
          * @see com.qualcomm.toq.smartwatch.api.v1.deckofcards.DeckOfCardsEventListener#onCardOpen(java.lang.String)
          */
@@ -486,13 +515,19 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
          * @see com.qualcomm.toq.smartwatch.api.v1.deckofcards.DeckOfCardsEventListener#onMenuOptionSelected(java.lang.String, java.lang.String)
          */
         public void onMenuOptionSelected(final String cardId, final String menuOption){
+            // final Wit wf = this.wit_fragment;
+
+
             runOnUiThread(new Runnable(){
                 public void run(){
                     Toast.makeText(ChatActivity.this, "Menu option selected" + cardId + " [" + menuOption +"]", Toast.LENGTH_SHORT).show();
                     // event_menu_option_selected
                     // NOTE(ricky): Call back from Toq -> Android.
                     Log.d(TAG, "Selected notification, start listening with mic");
-                    ((Button) findViewById(R.id.btnSpeak)).performClick();
+
+                    ChatActivity.WIT_FRAG.triggerRec(false);
+
+                    // ((Button) findViewById(R.id.btnSpeak)).performClick();
                 }
             });
         }

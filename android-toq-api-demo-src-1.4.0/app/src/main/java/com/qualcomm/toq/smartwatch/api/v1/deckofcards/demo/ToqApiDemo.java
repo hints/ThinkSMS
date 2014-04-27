@@ -701,7 +701,6 @@ public class ToqApiDemo extends Activity{
 
     }
 
-
     // Send notification button
     private void sendNotification(){
 
