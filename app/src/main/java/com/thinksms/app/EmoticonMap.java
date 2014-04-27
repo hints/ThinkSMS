@@ -26,6 +26,12 @@ public class EmoticonMap {
         else if ("Meh".equals(intent)) {
             return ":-|";
         }
+        else if ("Tired".equals(intent)) {
+            return "=_=";
+        }
+        else if ("Sleeping".equals(intent)) {
+            return "-_- Zzzzz";
+        }
         else {
             return ":-)";
         }
