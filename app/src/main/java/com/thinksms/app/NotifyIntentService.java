@@ -7,6 +7,14 @@ import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 import android.preview.support.v4.app.NotificationManagerCompat;
 import android.text.format.Time;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.qualcomm.toq.smartwatch.api.v1.deckofcards.Constants;
+import com.qualcomm.toq.smartwatch.api.v1.deckofcards.card.NotificationTextCard;
+import com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.DeckOfCardsManager;
+import com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.RemoteDeckOfCardsException;
+import com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.RemoteToqNotification;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -14,6 +22,8 @@ import android.text.format.Time;
  * helper methods.
  */
 public class NotifyIntentService extends IntentService {
+    private static final String TAG = "NotifyIntentService";
+
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     private static final String ACTION_NOTIFY = "com.thinksms.app.action.NOTIFY";
@@ -78,6 +88,35 @@ public class NotifyIntentService extends IntentService {
     }
 
     private void presentToqNotification(String text, String emoticon) {
+        Log.d(TAG, "NotifyIntentService.sendNotification");
 
+        String title = emoticon;
+        String message [] = {text};
+
+        // Create notification text card from UI values
+        NotificationTextCard notificationCard= new NotificationTextCard(System.currentTimeMillis(),
+                title, // ((EditText)findViewById(R.id.notification_title_text)).getText().toString(),
+                message // splitString(((EditText)findViewById(R.id.notification_message_text)).getText().toString())
+        );
+
+        notificationCard.setInfoText(text);
+        notificationCard.setReceivingEvents(true);
+        String menuOptions [] = {"Reply"};
+        notificationCard.setMenuOptions(menuOptions);
+
+        notificationCard.setShowDivider(false);
+        // notificationCard.setShowDivider(((CheckBox)findViewById(R.id.notification_divider_checkbox)).isChecked());
+        notificationCard.setVibeAlert(true);
+
+        RemoteToqNotification notification= new RemoteToqNotification(this, notificationCard);
+
+        try {
+            DeckOfCardsManager deckOfCardsManager = DeckOfCardsManager.getInstance(getApplicationContext());
+            deckOfCardsManager.sendNotification(notification);
+        }
+        catch (RemoteDeckOfCardsException e){
+            Toast.makeText(this, "Error sending Toq notification", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "ToqApiDemo.sendNotification - error sending notification", e);
+        }
     }
 }
