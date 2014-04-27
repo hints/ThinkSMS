@@ -110,7 +110,6 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         else{
             Log.d(TAG, "ToqApiDemo.onStart - already connected");
         }
-
     }
 
 
@@ -178,6 +177,30 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
     }
 
+
+    // Install deck of cards applet
+    private void installDeckOfCards() {
+
+        Log.d(TAG, "ToqApiDemo.installDeckOfCards");
+
+//        updateDeckOfCardsFromUI();
+
+        try{
+            deckOfCardsManager.installDeckOfCards(deckOfCards, resourceStore);
+        }
+        catch (RemoteDeckOfCardsException e){
+            Toast.makeText(this, "Error installing deck of cards.", Toast.LENGTH_SHORT).show();
+            Log.e(Constants.TAG, "ToqApiDemo.installDeckOfCards - error installing deck of cards applet", e);
+        }
+
+        try{
+            storeDeckOfCards();
+        }
+        catch (Exception e){
+            Log.e(Constants.TAG, "ToqApiDemo.installDeckOfCards - error storing deck of cards applet", e);
+        }
+
+    }
 
     // Get stored deck of cards if one exists
     private RemoteDeckOfCards getStoredDeckOfCards() throws Exception{
@@ -322,12 +345,14 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
          * @see com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.DeckOfCardsManagerListener#onConnected()
          */
         public void onConnected() {
-//            runOnUiThread(new Runnable(){
-//                public void run(){
+            runOnUiThread(new Runnable(){
+                public void run(){
+                    Log.d(TAG, "Connected!!!");
+                    //installDeckOfCards();
 //                    setStatus(getString(R.string.status_connected));
 //                    refreshUI();
-//                }
-//            });
+                }
+            });
         }
 
         /**

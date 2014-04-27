@@ -100,10 +100,9 @@ public class NotifyIntentService extends IntentService {
         );
 
         notificationCard.setInfoText(text);
-        notificationCard.setReceivingEvents(true);
         String menuOptions [] = {"Reply"};
         notificationCard.setMenuOptions(menuOptions);
-
+        notificationCard.setReceivingEvents(true);
         notificationCard.setShowDivider(false);
         // notificationCard.setShowDivider(((CheckBox)findViewById(R.id.notification_divider_checkbox)).isChecked());
         notificationCard.setVibeAlert(true);
@@ -115,7 +114,7 @@ public class NotifyIntentService extends IntentService {
             deckOfCardsManager.sendNotification(notification);
         }
         catch (RemoteDeckOfCardsException e){
-            Toast.makeText(this, "Error sending Toq notification", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Error sending Toq notification", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "ToqApiDemo.sendNotification - error sending notification", e);
         }
     }
