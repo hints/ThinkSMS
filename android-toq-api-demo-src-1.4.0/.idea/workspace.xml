@@ -64,8 +64,8 @@
       <file leaf-file-name="ToqApiDemo.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/qualcomm/toq/smartwatch/api/v1/deckofcards/demo/ToqApiDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29005525" vertical-offset="8385" max-vertical-offset="13485">
-              <caret line="566" column="37" selection-start-line="566" selection-start-column="37" selection-end-line="566" selection-end-column="37" />
+            <state vertical-scroll-proportion="25.773481" vertical-offset="0" max-vertical-offset="12420">
+              <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -109,20 +109,20 @@
                 <element signature="e#15981#15982#0" expanded="true" />
                 <element signature="e#16024#16025#0" expanded="true" />
                 <element signature="e#17378#17430#0" expanded="true" />
-                <element signature="e#21110#21235#0" expanded="true" />
-                <element signature="e#21224#21225#0" expanded="true" />
-                <element signature="e#21369#21493#0" expanded="true" />
-                <element signature="e#21482#21483#0" expanded="true" />
-                <element signature="e#21636#21763#0" expanded="true" />
-                <element signature="e#21752#21753#0" expanded="true" />
-                <element signature="e#21902#22025#0" expanded="true" />
-                <element signature="e#22014#22015#0" expanded="true" />
-                <element signature="e#25694#25744#0" expanded="true" />
-                <element signature="e#26458#26506#0" expanded="true" />
-                <element signature="e#27166#27218#0" expanded="true" />
-                <element signature="e#28896#28942#0" expanded="true" />
-                <element signature="e#34050#34051#0" expanded="true" />
-                <element signature="e#34092#34093#0" expanded="true" />
+                <element signature="e#20226#20351#0" expanded="true" />
+                <element signature="e#20340#20341#0" expanded="true" />
+                <element signature="e#20485#20609#0" expanded="true" />
+                <element signature="e#20598#20599#0" expanded="true" />
+                <element signature="e#20752#20879#0" expanded="true" />
+                <element signature="e#20868#20869#0" expanded="true" />
+                <element signature="e#21018#21141#0" expanded="true" />
+                <element signature="e#21130#21131#0" expanded="true" />
+                <element signature="e#23209#23259#0" expanded="true" />
+                <element signature="e#23973#24021#0" expanded="true" />
+                <element signature="e#24681#24733#0" expanded="true" />
+                <element signature="e#26411#26457#0" expanded="true" />
+                <element signature="e#29245#29246#0" expanded="true" />
+                <element signature="e#29287#29288#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1283,7 +1283,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35488722" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35488722" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1484,8 +1484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/qualcomm/toq/smartwatch/api/v1/deckofcards/demo/ToqApiDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29005525" vertical-offset="8385" max-vertical-offset="13485">
-          <caret line="566" column="37" selection-start-line="566" selection-start-column="37" selection-end-line="566" selection-end-column="37" />
+        <state vertical-scroll-proportion="25.773481" vertical-offset="0" max-vertical-offset="12420">
+          <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1529,20 +1529,20 @@
             <element signature="e#15981#15982#0" expanded="true" />
             <element signature="e#16024#16025#0" expanded="true" />
             <element signature="e#17378#17430#0" expanded="true" />
-            <element signature="e#21110#21235#0" expanded="true" />
-            <element signature="e#21224#21225#0" expanded="true" />
-            <element signature="e#21369#21493#0" expanded="true" />
-            <element signature="e#21482#21483#0" expanded="true" />
-            <element signature="e#21636#21763#0" expanded="true" />
-            <element signature="e#21752#21753#0" expanded="true" />
-            <element signature="e#21902#22025#0" expanded="true" />
-            <element signature="e#22014#22015#0" expanded="true" />
-            <element signature="e#25694#25744#0" expanded="true" />
-            <element signature="e#26458#26506#0" expanded="true" />
-            <element signature="e#27166#27218#0" expanded="true" />
-            <element signature="e#28896#28942#0" expanded="true" />
-            <element signature="e#34050#34051#0" expanded="true" />
-            <element signature="e#34092#34093#0" expanded="true" />
+            <element signature="e#20226#20351#0" expanded="true" />
+            <element signature="e#20340#20341#0" expanded="true" />
+            <element signature="e#20485#20609#0" expanded="true" />
+            <element signature="e#20598#20599#0" expanded="true" />
+            <element signature="e#20752#20879#0" expanded="true" />
+            <element signature="e#20868#20869#0" expanded="true" />
+            <element signature="e#21018#21141#0" expanded="true" />
+            <element signature="e#21130#21131#0" expanded="true" />
+            <element signature="e#23209#23259#0" expanded="true" />
+            <element signature="e#23973#24021#0" expanded="true" />
+            <element signature="e#24681#24733#0" expanded="true" />
+            <element signature="e#26411#26457#0" expanded="true" />
+            <element signature="e#29245#29246#0" expanded="true" />
+            <element signature="e#29287#29288#0" expanded="true" />
           </folding>
         </state>
       </provider>

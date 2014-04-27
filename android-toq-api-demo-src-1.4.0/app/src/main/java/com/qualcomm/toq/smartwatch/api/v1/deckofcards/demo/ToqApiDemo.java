@@ -565,23 +565,7 @@ public class ToqApiDemo extends Activity{
         simpleTextCard.setMenuOptions(new String[]{"Ping back"});
         simpleTextCard.setShowDivider(false);
         listCard.add(simpleTextCard);
-/*
-        // Card 2
-        simpleTextCard= new SimpleTextCard("card2", "Header 2", System.currentTimeMillis(), "Title 2", new String[]{"Card 2: line 1", "Card 2: line 2", "Card 2: line 3"});
-        simpleTextCard.setInfoText("20");
-        simpleTextCard.setReceivingEvents(true);
-        simpleTextCard.setMenuOptions(new String[]{"111", "222", "333"});
-        simpleTextCard.setShowDivider(false);
-        listCard.add(simpleTextCard);
 
-        // Card 3
-        simpleTextCard= new SimpleTextCard("card3", "Header 3", System.currentTimeMillis(), "Title 3", new String[]{"Card 3: line 1", "Card 3: line 2", "Card 3: line 3"});
-        simpleTextCard.setInfoText("30");
-        simpleTextCard.setReceivingEvents(false);
-        simpleTextCard.setMenuOptions(new String[]{"xxx", "yyy", "zzz"});
-        simpleTextCard.setShowDivider(true);
-        listCard.add(simpleTextCard);
-*/
         return new RemoteDeckOfCards(this, listCard);
     }
 
@@ -636,25 +620,6 @@ public class ToqApiDemo extends Activity{
         ((CheckBox)findViewById(R.id.doc1_events_checkbox)).setChecked(simpleTextCard.isReceivingEvents());
         ((EditText)findViewById(R.id.doc1_menu_options_text)).setText(concatStrings(simpleTextCard.getMenuOptions()));
         ((CheckBox)findViewById(R.id.doc1_divider_checkbox)).setChecked(simpleTextCard.isShowDivider());
-/*
-        simpleTextCard= (SimpleTextCard)listCard.childAtIndex(1);
-        ((EditText)findViewById(R.id.doc2_header_text)).setText(simpleTextCard.getHeaderText());
-        ((EditText)findViewById(R.id.doc2_title_text)).setText(simpleTextCard.getTitleText());
-        ((EditText)findViewById(R.id.doc2_message_text)).setText(concatStrings(simpleTextCard.getMessageText()));
-        ((EditText)findViewById(R.id.doc2_info_text)).setText(simpleTextCard.getInfoText());
-        ((CheckBox)findViewById(R.id.doc2_events_checkbox)).setChecked(simpleTextCard.isReceivingEvents());
-        ((EditText)findViewById(R.id.doc2_menu_options_text)).setText(concatStrings(simpleTextCard.getMenuOptions()));
-        ((CheckBox)findViewById(R.id.doc2_divider_checkbox)).setChecked(simpleTextCard.isShowDivider());
-
-        simpleTextCard= (SimpleTextCard)listCard.childAtIndex(2);
-        ((EditText)findViewById(R.id.doc3_header_text)).setText(simpleTextCard.getHeaderText());
-        ((EditText)findViewById(R.id.doc3_title_text)).setText(simpleTextCard.getTitleText());
-        ((EditText)findViewById(R.id.doc3_message_text)).setText(concatStrings(simpleTextCard.getMessageText()));
-        ((EditText)findViewById(R.id.doc3_info_text)).setText(simpleTextCard.getInfoText());
-        ((CheckBox)findViewById(R.id.doc3_events_checkbox)).setChecked(simpleTextCard.isReceivingEvents());
-        ((EditText)findViewById(R.id.doc3_menu_options_text)).setText(concatStrings(simpleTextCard.getMenuOptions()));
-        ((CheckBox)findViewById(R.id.doc3_divider_checkbox)).setChecked(simpleTextCard.isShowDivider());
-*/
 
         // Notification
         ((EditText)findViewById(R.id.notification_title_text)).setText("Emoji");
@@ -829,42 +794,6 @@ public class ToqApiDemo extends Activity{
         else{
             simpleTextCard.setMenuOptions(splitString(((EditText)findViewById(R.id.doc1_menu_options_text)).getText().toString()));
         }
-    /*
-        // Card 2
-        simpleTextCard= (SimpleTextCard)listCard.childAtIndex(1);
-        simpleTextCard.setHeaderText(((EditText)findViewById(R.id.doc2_header_text)).getText().toString());
-        simpleTextCard.setTitleText(((EditText)findViewById(R.id.doc2_title_text)).getText().toString());
-        simpleTextCard.setMessageText(splitString(((EditText)findViewById(R.id.doc2_message_text)).getText().toString()));
-        simpleTextCard.setInfoText(((EditText)findViewById(R.id.doc2_info_text)).getText().toString());
-        simpleTextCard.setReceivingEvents(((CheckBox)findViewById(R.id.doc2_events_checkbox)).isChecked());
-        simpleTextCard.setShowDivider(((CheckBox)findViewById(R.id.doc2_divider_checkbox)).isChecked());
-        simpleTextCard.setTimeMillis(System.currentTimeMillis());
-
-        if (((EditText)findViewById(R.id.doc2_menu_options_text)).getText().length() == 0){
-            simpleTextCard.setMenuOptions(null); // If all menu options deleted, reset
-        }
-        else{
-            simpleTextCard.setMenuOptions(splitString(((EditText)findViewById(R.id.doc2_menu_options_text)).getText().toString()));
-        }
-
-        // Card 3
-        simpleTextCard= (SimpleTextCard)listCard.childAtIndex(2);
-        simpleTextCard.setHeaderText(((EditText)findViewById(R.id.doc3_header_text)).getText().toString());
-        simpleTextCard.setTitleText(((EditText)findViewById(R.id.doc3_title_text)).getText().toString());
-        simpleTextCard.setMessageText(splitString(((EditText)findViewById(R.id.doc3_message_text)).getText().toString()));
-        simpleTextCard.setInfoText(((EditText)findViewById(R.id.doc3_info_text)).getText().toString());
-        simpleTextCard.setReceivingEvents(((CheckBox)findViewById(R.id.doc3_events_checkbox)).isChecked());
-        simpleTextCard.setShowDivider(((CheckBox)findViewById(R.id.doc3_divider_checkbox)).isChecked());
-        simpleTextCard.setTimeMillis(System.currentTimeMillis());
-
-        if (((EditText)findViewById(R.id.doc3_menu_options_text)).getText().length() == 0){
-            simpleTextCard.setMenuOptions(null); // If all menu options deleted, reset
-        }
-        else{
-            simpleTextCard.setMenuOptions(splitString(((EditText)findViewById(R.id.doc3_menu_options_text)).getText().toString()));
-        }
-
-        */
     }
 
 
