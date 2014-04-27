@@ -56,10 +56,8 @@ public class MessageQueue {
         scheduler.schedule(new Runnable() {
             @Override
             public void run() {
+                Log.d(TAG, "Delayed state pop.");
                 ChatActivity.getInstance().popEmotionState();
-                if (!ChatActivity.getInstance().doNotDisturb()) {
-                    deliverPendingMessagesOnUIThread();
-                }
             }
         }, delay, TimeUnit.SECONDS);
     }

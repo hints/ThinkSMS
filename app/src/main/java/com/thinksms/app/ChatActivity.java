@@ -23,13 +23,18 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 import ai.wit.sdk.IWitListener;
 import ai.wit.sdk.Wit;
+
+import com.google.gson.JsonObject;
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.Constants;
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.DeckOfCardsEventListener;
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.card.ListCard;
@@ -43,6 +48,8 @@ import com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.RemoteResourceStore
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.remote.RemoteToqNotification;
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.resource.DeckOfCardsLauncherIcon;
 import com.qualcomm.toq.smartwatch.api.v1.deckofcards.util.ParcelableUtil;
+
+import org.json.JSONObject;
 
 
 public class ChatActivity extends ActionBarActivity implements IWitListener {
@@ -63,7 +70,7 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
     private RemoteDeckOfCards deckOfCards;
 
-    private EmotionState emotionState;
+    private Stack<EmotionState> emotionStates = new Stack<EmotionState>();
 
     private static ChatActivity instance;
 
@@ -78,7 +85,7 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         this.instance = this;
 
         PlaceholderFragment holder = new PlaceholderFragment();
-        setEmotionState(new EmotionState());
+        emotionStates.push(new EmotionState());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, holder)
@@ -151,7 +158,19 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
 
     public void setEmotionState(EmotionState state) {
-        emotionState = state;
+        if (state.endDate != null) {
+            // push state and schedule pop
+            emotionStates.push(state);
+            // Schedule pop
+            long delay = (state.endDate.getTime() - new Date().getTime()) / 1000;
+            Log.d(TAG, "Delaying notifications for " + delay + " seconds.");
+            MessageQueue.getInstance().queuePopState((state.endDate.getTime() - new Date().getTime()) / 1000);
+        }
+        else {
+           // replace top state
+            emotionStates.pop();
+            emotionStates.push(state);
+        }
         ((TextView)findViewById(R.id.emoticonText)).setText(state.emoticon);
 
         if (!this.doNotDisturb()) {
@@ -162,11 +181,20 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
     public void popEmotionState() {
         Log.d(TAG, "Pop pending emotion state, if any");
+        if (emotionStates.size() > 1) {
+            emotionStates.pop();
+            if (!this.doNotDisturb()) {
+                MessageQueue.getInstance().deliverPendingMessagesOnUIThread();
+            }
+        }
+       else {
+            Log.d(TAG, "Did not pop state, only one state in the stack");
+        }
     }
 
 
     public EmotionState getEmotionState() {
-        return emotionState;
+        return emotionStates.peek();
     }
 
 
@@ -393,6 +421,34 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         EmotionState emotionState = new EmotionState();
         emotionState.intent = message.intent;
         emotionState.emoticon = message.getEmoticon();
+
+        // Parse datetime, if we have one
+        JsonElement datetimeElement = entities.get("datetime");
+        if (datetimeElement != null) {
+            JsonObject datetime = datetimeElement.getAsJsonObject();
+            JsonObject value = datetime.get("value").getAsJsonObject();
+            String startDate = value.get("from").getAsString();
+            String endDate = value.get("to").getAsString();
+            SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+            try {
+                emotionState.startDate = dateParser.parse(startDate);
+                emotionState.endDate = dateParser.parse(endDate);
+                Log.d(TAG, "Date: " + emotionState.endDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Parse duration, if we have one
+        JsonElement durationElement = entities.get("duration");
+        if (durationElement != null) {
+            JsonObject duration = durationElement.getAsJsonObject();
+            int seconds = duration.get("value").getAsInt();
+            emotionState.startDate = new Date();
+            emotionState.endDate = new Date(emotionState.startDate.getTime() + (seconds * 1000));
+            Log.d(TAG, "Duration: " + seconds + " seconds");
+        }
+
         this.setEmotionState(emotionState);
 
         message.send();  // Send the message as a push notification
