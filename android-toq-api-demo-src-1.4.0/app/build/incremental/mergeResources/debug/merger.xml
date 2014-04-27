@@ -87,7 +87,7 @@
                 </string>
                 <string name="doc_update_button" >Update
                 </string>
-                <string name="doc_card1_text" >Card #1
+                <string name="doc_card1_text" >Welcome to Think SMS
                 </string>
                 <string name="doc_panel" >Deck Of Cards
                 </string>
@@ -95,13 +95,13 @@
                 </string>
                 <string name="info_text" >Info:
                 </string>
-                <string name="doc_card2_text" >Card #2
+                <string name="doc_card2_text" >The next evolution of SMS -> MMS -> Think SMS.
                 </string>
                 <string name="intent_toq_watch_disconnected" >Toq watch is disconnected from Toq app
                 </string>
                 <string name="status_disconnected" >Disconnected from Toq app service
                 </string>
-                <string name="doc_header_text" >Header:
+                <string name="doc_header_text" >Think SMS
                 </string>
                 <string name="message_text" >Message:
                 </string>
@@ -113,7 +113,7 @@
                 </string>
                 <string name="error_updating_deck_of_cards" >Error updating deck of cards applet
                 </string>
-                <string name="app_name" >Qualcomm Toq API Demo
+                <string name="app_name" >Think SMS
                 </string>
                 <string name="title_text" >Title:
                 </string>
@@ -123,7 +123,7 @@
                 </string>
                 <string name="status_installation_denied" >Deck of cards installation denied
                 </string>
-                <string name="doc_card3_text" >Card #3
+                <string name="doc_card3_text" >card 3
                 </string>
                 <string name="intent_toq_watch_connected" >Toq watch is connected to Toq app
                 </string>

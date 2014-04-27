@@ -18,7 +18,6 @@ import com.qualcomm.toq.smartwatch.api.v1.deckofcards.Constants;
  */
 public class ToqAppletInstallationBroadcastReceiver extends BroadcastReceiver{
 
-    
     /**
      * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent)
      */

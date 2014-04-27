@@ -16,10 +16,10 @@
     <string name="notification_vibe_text">Vibe Alert:</string>   
     <string name="send_notification_button">Send</string>   
     <string name="doc_panel">Deck Of Cards</string>
-    <string name="doc_header_text">Header:</string>
-    <string name="doc_card1_text">Card #1</string>
-    <string name="doc_card2_text">Card #2</string>
-    <string name="doc_card3_text">Card #3</string> 
+    <string name="doc_header_text">Think SMS</string>
+    <string name="doc_card1_text">Welcome to Think SMS</string>
+    <string name="doc_card2_text">The next evolution of SMS -> MMS -> Think SMS.</string>
+    <string name="doc_card3_text">card 3</string>
     <string name="doc_install_button">Install</string>
     <string name="doc_update_button">Update</string>
     <string name="doc_uninstall_button">Uninstall</string>

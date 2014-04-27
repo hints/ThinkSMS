@@ -20,7 +20,7 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout01=0x7f080000;
-        public static final int action_settings=0x7f080025;
+        public static final int action_settings=0x7f080017;
         public static final int doc1_divider_checkbox=0x7f080009;
         public static final int doc1_events_checkbox=0x7f080007;
         public static final int doc1_header_text=0x7f080003;
@@ -28,35 +28,21 @@ public final class R {
         public static final int doc1_menu_options_text=0x7f080008;
         public static final int doc1_message_text=0x7f080005;
         public static final int doc1_title_text=0x7f080004;
-        public static final int doc2_divider_checkbox=0x7f080010;
-        public static final int doc2_events_checkbox=0x7f08000e;
-        public static final int doc2_header_text=0x7f08000a;
-        public static final int doc2_info_text=0x7f08000d;
-        public static final int doc2_menu_options_text=0x7f08000f;
-        public static final int doc2_message_text=0x7f08000c;
-        public static final int doc2_title_text=0x7f08000b;
-        public static final int doc3_divider_checkbox=0x7f080017;
-        public static final int doc3_events_checkbox=0x7f080015;
-        public static final int doc3_header_text=0x7f080011;
-        public static final int doc3_info_text=0x7f080014;
-        public static final int doc3_menu_options_text=0x7f080016;
-        public static final int doc3_message_text=0x7f080013;
-        public static final int doc3_title_text=0x7f080012;
-        public static final int doc_install_button=0x7f080018;
+        public static final int doc_install_button=0x7f08000a;
         public static final int doc_panel=0x7f080002;
-        public static final int doc_uninstall_button=0x7f08001a;
-        public static final int doc_update_button=0x7f080019;
-        public static final int notification_divider_checkbox=0x7f080021;
-        public static final int notification_events_checkbox=0x7f08001f;
-        public static final int notification_info_text=0x7f08001e;
-        public static final int notification_menu_options_text=0x7f080020;
-        public static final int notification_message_text=0x7f08001d;
-        public static final int notification_panel=0x7f08001b;
-        public static final int notification_title_text=0x7f08001c;
-        public static final int notification_vibe_checkbox=0x7f080022;
-        public static final int send_notification_button=0x7f080023;
+        public static final int doc_uninstall_button=0x7f08000c;
+        public static final int doc_update_button=0x7f08000b;
+        public static final int notification_divider_checkbox=0x7f080013;
+        public static final int notification_events_checkbox=0x7f080011;
+        public static final int notification_info_text=0x7f080010;
+        public static final int notification_menu_options_text=0x7f080012;
+        public static final int notification_message_text=0x7f08000f;
+        public static final int notification_panel=0x7f08000d;
+        public static final int notification_title_text=0x7f08000e;
+        public static final int notification_vibe_checkbox=0x7f080014;
+        public static final int send_notification_button=0x7f080015;
         public static final int status_panel=0x7f080001;
-        public static final int status_text=0x7f080024;
+        public static final int status_text=0x7f080016;
     }
     public static final class layout {
         public static final int main=0x7f030000;
