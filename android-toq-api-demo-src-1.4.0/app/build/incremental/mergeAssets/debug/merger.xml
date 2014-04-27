@@ -2,17 +2,17 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets" >
+        <source path="/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets" >
             <file
                 name="color.png"
-                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets/color.png" />
+                path="/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets/color.png" />
             <file
                 name="white.png"
-                path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets/white.png" />
+                path="/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/assets/white.png" />
         </source>
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/debug/assets" />
+        <source path="/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/debug/assets" />
     </dataSet>
 
 </merger>

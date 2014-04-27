@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values-sw720dp-land/dimens.xml -->
+    <!-- From: file:/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/res/values-sw720dp-land/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">128dp</dimen>

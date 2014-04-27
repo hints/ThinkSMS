@@ -1,7 +1,7 @@
 <!--
   Copyright (c) 2013 Qualcomm Connected Experiences, Inc, All rights reserved
 -->
-<!-- From: file:/Users/rickywong/Documents/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/AndroidManifest.xml -->
+<!-- From: file:/Users/dtreiman/AndroidStudioProjects/ThinkSMS/android-toq-api-demo-src-1.4.0/app/src/main/AndroidManifest.xml -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="140" android:versionName="1.4.0" package="com.qualcomm.toq.smartwatch.api.v1.deckofcards.demo">
 
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>

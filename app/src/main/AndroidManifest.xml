@@ -61,6 +61,14 @@
             android:name="com.thinksms.app.NotifyIntentService"
             android:exported="false" >
         </service>
+        <receiver
+            android:name=".ToqAppletInstallationBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.qualcomm.toq.smartwatch.install.applet" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
