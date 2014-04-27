@@ -74,7 +74,7 @@ public class NotifyIntentService extends IntentService {
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(getApplicationContext())
-                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setSmallIcon(smallIcon)
 //                        .setLargeIcon(placeBitmap)
                         .setContentTitle(emoticon)
                         .setContentText(text)
@@ -101,18 +101,19 @@ public class NotifyIntentService extends IntentService {
                 message // splitString(((EditText)findViewById(R.id.notification_message_text)).getText().toString())
         );
 
-        Boolean shouldVibe = true;
+        Boolean doNotDisturb = true;
         EmotionState state = ChatActivity.getInstance().getEmotionState();
         if (state != null) {
             if ("Tired".equals(state.intent)) {
-                shouldVibe = false;
+                doNotDisturb = doNotDisturb;
             }
             else if ("Sleeping".equals(state.intent)) {
-                shouldVibe = false;
+                doNotDisturb = doNotDisturb;
             }
             else if ("Busy".equals(state.intent)) {
-                shouldVibe = false;
+                doNotDisturb = doNotDisturb;
             }
+
         }
         notificationCard.setInfoText(text);
 
@@ -121,7 +122,7 @@ public class NotifyIntentService extends IntentService {
         notificationCard.setReceivingEvents(true);
         notificationCard.setShowDivider(false);
         // notificationCard.setShowDivider(((CheckBox)findViewById(R.id.notification_divider_checkbox)).isChecked());
-        notificationCard.setVibeAlert(shouldVibe);
+        notificationCard.setVibeAlert(!doNotDisturb);
 
         RemoteToqNotification notification= new RemoteToqNotification(this, notificationCard);
 

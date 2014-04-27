@@ -400,8 +400,8 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         public void onConnected() {
             runOnUiThread(new Runnable(){
                 public void run(){
-            Log.d(TAG, "Connected!!!");
-            installDeckOfCards();
+                    Log.d(TAG, "Connected!!!");
+                     // installDeckOfCards();
 //                    setStatus(getString(R.string.status_connected));
 //                    refreshUI();
                 }
