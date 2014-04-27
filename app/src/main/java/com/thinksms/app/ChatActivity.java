@@ -308,8 +308,8 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
                 "<b></span><br/>") + jsonOutput +
                 Html.fromHtml("<br/><span><b>Confidence: " + confidence + "<b></span>"));
 
-        List<String> messageTraits = new ArrayList<String>();
-        Message message = new Message(body, messageTraits);
+        List<String> messageEntities = new ArrayList<String>();
+        Message message = new Message(body, intent, messageEntities);
         message.send();  // Send the message as a push notification
     }
 

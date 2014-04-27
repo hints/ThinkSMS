@@ -19,15 +19,17 @@ import java.util.List;
 public class Message {
 
     public String text;
-    public List<String> traits;
+    public String intent;
+    public List<String> entities;
 
-    public Message(String messageText, List<String> messageTraits) {
+    public Message(String messageText, String messageIntent, List<String> messageEntities) {
         text = messageText;
-        traits = messageTraits;
+        intent = messageIntent;
+        entities = messageEntities;
     }
 
     public String getEmoticon() {
-        return ":-)";
+        return EmoticonMap.emoticonForIntent(intent);
     }
 
     public int getSmallIcon() {
