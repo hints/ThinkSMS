@@ -24,6 +24,7 @@ import com.google.gson.JsonElement;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -60,11 +61,21 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
     private RemoteDeckOfCards deckOfCards;
 
+    private EmotionState emotionState;
+
+    private static ChatActivity instance;
+
+    public static ChatActivity getInstance() {
+        return instance;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        this.instance = this;
 
+        setEmotionState(new EmotionState());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -132,6 +143,18 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         super.onDestroy();
         Log.d(Constants.TAG, "ToqApiDemo.onDestroy");
         deckOfCardsManager.disconnect();
+        this.instance = null;
+    }
+
+
+    public void setEmotionState(EmotionState state) {
+        emotionState = state;
+        ((TextView)findViewById(R.id.emoticonText)).setText(state.emoticon);
+    }
+
+
+    public EmotionState getEmotionState() {
+        return emotionState;
     }
 
 
@@ -310,6 +333,12 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
         List<String> messageEntities = new ArrayList<String>();
         Message message = new Message(body, intent, messageEntities);
+
+        EmotionState emotionState = new EmotionState();
+        emotionState.intent = message.intent;
+        emotionState.emoticon = message.getEmoticon();
+        this.setEmotionState(emotionState);
+
         message.send();  // Send the message as a push notification
     }
 

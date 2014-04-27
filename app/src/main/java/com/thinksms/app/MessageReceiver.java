@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +36,8 @@ public class MessageReceiver extends BroadcastReceiver {
             String emoticon = dataObject.getString("emoticon");
 
             NotifyIntentService.presentNotificationForMessage(context, text, emoticon);
+            ChatActivity activity = ChatActivity.getInstance();
+            ((TextView) activity.findViewById(R.id.messageText)).setText(emoticon + " " + text);
         }
         catch (JSONException e) {
             Log.d(TAG, "JSONException: " + e.getMessage());

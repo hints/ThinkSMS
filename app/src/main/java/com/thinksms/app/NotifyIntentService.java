@@ -70,6 +70,8 @@ public class NotifyIntentService extends IntentService {
         NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
         bigStyle.bigText(text);
 
+        int smallIcon = EmoticonMap.foxImageForEmoticon(emoticon);
+
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(getApplicationContext())
                         .setSmallIcon(R.drawable.ic_launcher)
@@ -99,13 +101,26 @@ public class NotifyIntentService extends IntentService {
                 message // splitString(((EditText)findViewById(R.id.notification_message_text)).getText().toString())
         );
 
+        Boolean shouldVibe = true;
+        EmotionState state = ChatActivity.getInstance().getEmotionState();
+        if (state != null) {
+            if ("Tired".equals(state.intent)) {
+                shouldVibe = false;
+            }
+            else if ("Sleeping".equals(state.intent)) {
+                shouldVibe = false;
+            }
+            else if ("Busy".equals(state.intent)) {
+                shouldVibe = false;
+            }
+        }
         notificationCard.setInfoText(text);
         String menuOptions [] = {"Reply"};
         notificationCard.setMenuOptions(menuOptions);
         notificationCard.setReceivingEvents(true);
         notificationCard.setShowDivider(false);
         // notificationCard.setShowDivider(((CheckBox)findViewById(R.id.notification_divider_checkbox)).isChecked());
-        notificationCard.setVibeAlert(true);
+        notificationCard.setVibeAlert(shouldVibe);
 
         RemoteToqNotification notification= new RemoteToqNotification(this, notificationCard);
 

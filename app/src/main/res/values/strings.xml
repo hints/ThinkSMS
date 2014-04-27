@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">ThinkSMS</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world"></string>
+    <string name="smiley"></string>
     <string name="action_settings">Settings</string>
 
 </resources>
