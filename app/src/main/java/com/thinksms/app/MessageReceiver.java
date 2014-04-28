@@ -43,7 +43,7 @@ public class MessageReceiver extends BroadcastReceiver {
         else {
                 NotifyIntentService.presentNotificationForMessage(context, text, emoticon);
                 ChatActivity activity = ChatActivity.getInstance();
-                ((TextView) activity.findViewById(R.id.messageText)).setText(emoticon + " " + text);
+                activity.showMessageReceived(text, emoticon);
             }
         }
         catch (JSONException e) {

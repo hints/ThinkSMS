@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -248,6 +249,14 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     }
 
 
+    public void showMessageReceived(String text, String emoticon) {
+        TextView messageView = (TextView) findViewById(R.id.jsonView);
+        CharSequence oldText = messageView.getText();
+        CharSequence newText = Html.fromHtml("<span><b>" + emoticon +
+                "<b></span>&nbsp;&nbsp;&nbsp;&nbsp;<span>" + text + "</span><br/>");
+        messageView.setText(TextUtils.concat(oldText, newText));
+    }
+
     // Initialise deck of cards
     private void initDeckOfCards(){
 
@@ -434,6 +443,11 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     {
         PHBridge bridge = phHueSDK.getSelectedBridge();
 
+        if (bridge == null) {
+            Log.d(TAG, "No hue bridge found, early out");
+            return;
+        }
+
         List<PHLight> allLights = bridge.getResourceCache().getAllLights();
 
         for (PHLight light : allLights)
@@ -479,9 +493,9 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         ((TextView) findViewById(R.id.txtText)).setText(body);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonOutput = gson.toJson(entities);
-        ((TextView) findViewById(R.id.jsonView)).setText(Html.fromHtml("<span><b>Intent: " + intent +
-                "<b></span><br/>") + jsonOutput +
-                Html.fromHtml("<br/><span><b>Confidence: " + confidence + "<b></span>"));
+//        ((TextView) findViewById(R.id.jsonView)).setText(Html.fromHtml("<span><b>Intent: " + intent +
+//                "<b></span><br/>") + jsonOutput +
+//                Html.fromHtml("<br/><span><b>Confidence: " + confidence + "<b></span>"));
 
         List<String> messageEntities = new ArrayList<String>();
         Message message = new Message(body, intent, messageEntities);

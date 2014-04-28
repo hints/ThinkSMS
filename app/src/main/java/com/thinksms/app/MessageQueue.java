@@ -47,7 +47,7 @@ public class MessageQueue {
             Log.d(TAG, "Delivering queued message: " + message.text);
             ChatActivity activity = ChatActivity.getInstance();
             NotifyIntentService.presentNotificationForMessage(activity.getBaseContext(), message.text, message.getEmoticon());
-            ((TextView) activity.findViewById(R.id.messageText)).setText(message.getEmoticon() + " " + message.text);
+            activity.showMessageReceived(message.text, message.getEmoticon());
         }
         pendingMessages.clear();
     }

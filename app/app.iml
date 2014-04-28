@@ -70,6 +70,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="huelocalsdk" level="project" />
     <orderEntry type="library" exported="" name="android-toq-api-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="Parse-1.4.3" level="project" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
@@ -79,6 +80,7 @@
     <orderEntry type="library" exported="" name="wit.sdk" level="project" />
     <orderEntry type="library" exported="" name="wearable-preview-support" level="project" />
     <orderEntry type="library" exported="" name="1_wearable-preview-support" level="project" />
+    <orderEntry type="library" exported="" name="sdkresources" level="project" />
     <orderEntry type="library" exported="" name="commons-io-2.4" level="project" />
   </component>
 </module>
