@@ -442,6 +442,10 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     public void colorLights(int r,int g,int b)
     {
         PHBridge bridge = phHueSDK.getSelectedBridge();
+        if (bridge==null)
+        {
+            return ;
+        }
 
         if (bridge == null) {
             Log.d(TAG, "No hue bridge found, early out");
