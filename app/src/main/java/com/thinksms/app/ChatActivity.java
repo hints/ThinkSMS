@@ -28,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Stack;
 
@@ -51,6 +52,15 @@ import com.qualcomm.toq.smartwatch.api.v1.deckofcards.util.ParcelableUtil;
 
 import org.json.JSONObject;
 
+import com.philips.lighting.hue.listener.PHLightListener;
+import com.philips.lighting.hue.sdk.PHHueSDK;
+import com.philips.lighting.hue.sdk.utilities.PHUtilities;
+import com.philips.lighting.model.PHBridge;
+import com.philips.lighting.model.PHHueError;
+import com.philips.lighting.model.PHLight;
+import com.philips.lighting.model.PHLightState;
+
+
 
 public class ChatActivity extends ActionBarActivity implements IWitListener {
     private static final String TAG = "ChatActivity";
@@ -73,6 +83,7 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     private Stack<EmotionState> emotionStates = new Stack<EmotionState>();
 
     private static ChatActivity instance;
+    private PHHueSDK phHueSDK;
 
     public static ChatActivity getInstance() {
         return instance;
@@ -83,6 +94,9 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         this.instance = this;
+
+        phHueSDK = PHHueSDK.create();
+
 
         PlaceholderFragment holder = new PlaceholderFragment();
         emotionStates.push(new EmotionState());
@@ -152,6 +166,15 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
     public void onDestroy(){
         super.onDestroy();
         Log.d(Constants.TAG, "ToqApiDemo.onDestroy");
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        if (bridge != null) {
+
+            if (phHueSDK.isHeartbeatEnabled(bridge)) {
+                phHueSDK.disableHeartbeat(bridge);
+            }
+
+            phHueSDK.disconnect(bridge);
+        }
         deckOfCardsManager.disconnect();
         this.instance = null;
     }
@@ -406,6 +429,51 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         return super.onOptionsItemSelected(item);
     }
 
+
+    public void colorLights(int r,int g,int b)
+    {
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+
+        for (PHLight light : allLights)
+        {
+
+            float xy[] = PHUtilities.calculateXYFromRGB(r,g,b, light.getModelNumber());
+
+
+            PHLightState lightState = new PHLightState();
+            lightState.setX(xy[0]);
+            lightState.setY(xy[1]);
+            // To validate your lightstate is valid (before sending to the bridge) you can use:
+            // String validState = lightState.validateState();
+            bridge.updateLightState(light, lightState, lightListener);
+            //  bridge.updateLightState(light, lightState);   // If no bridge response is required then use this simpler form.
+        }
+    }
+
+
+    // If you want to handle the response from the bridge, create a PHLightListener object.
+    PHLightListener lightListener = new PHLightListener() {
+
+        @Override
+        public void onSuccess() {
+            Log.w(TAG, "Light onSuccess");
+        }
+
+        @Override
+        public void onStateUpdate(Hashtable<String, String> arg0, List<PHHueError> arg1) {
+            //   Log.w(TAG, "Light has updated");
+        }
+
+        @Override
+        public void onError(int arg0, String arg1) {
+            Log.w(TAG, "Light onError");
+        }
+    };
+
+
+
     @Override
     public void witDidGraspIntent(String intent, HashMap<String, JsonElement> entities, String body, double confidence, Error error) {
         ((TextView) findViewById(R.id.txtText)).setText(body);
@@ -417,6 +485,12 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
 
         List<String> messageEntities = new ArrayList<String>();
         Message message = new Message(body, intent, messageEntities);
+
+        String [] colors = EmoticonMap.rgbForIntent(intent);
+        int r = Integer.parseInt(colors[0]);
+        int g = Integer.parseInt(colors[1]);
+        int b = Integer.parseInt(colors[2]);
+        colorLights(r,g,b);
 
         EmotionState emotionState = new EmotionState();
         emotionState.intent = message.intent;

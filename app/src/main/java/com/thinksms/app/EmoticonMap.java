@@ -39,6 +39,22 @@ public class EmoticonMap {
             "\\o/"
     };
 
+    private static String[][] colors = {
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"},
+            {"255","0","0"}
+    };
+
     private static int[] foxImages = {
             R.drawable.fox_abd517cd_93c4_44e6_99ca_9aa9e14afaa8_image_thumb,
             R.drawable.fox_dd5a1f5a_f7d1_4dd3_a51a_ad155ba3ffc2_image_thumb,
@@ -83,6 +99,16 @@ public class EmoticonMap {
         }
         else {
             return emoticons[index];
+        }
+    }
+
+    public static String[] rgbForIntent(String intent) {
+        int index = indexForIntent(intent);
+        if (index == -1) {
+            return colors[0];
+        }
+        else {
+            return colors[index];
         }
     }
 
