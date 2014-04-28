@@ -39,12 +39,12 @@ public class EmoticonMap {
             "\\o/"
     };
 
-    private static String[][] colors = {
+    private static String[][] rgbColors = {
             {"255","0","0"},
             {"255","0","0"},
             {"255","0","0"},
             {"255","0","0"},
-            {"255","0","0"},
+            {"0","255","0"},
             {"255","0","0"},
             {"255","0","0"},
             {"255","0","0"},
@@ -105,10 +105,10 @@ public class EmoticonMap {
     public static String[] rgbForIntent(String intent) {
         int index = indexForIntent(intent);
         if (index == -1) {
-            return colors[0];
+            return rgbColors[4];
         }
         else {
-            return colors[index];
+            return rgbColors[index];
         }
     }
 
