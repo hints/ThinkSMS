@@ -486,6 +486,15 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         }
     };
 
+    public void setRgbColorForEmoticon(String emoticon)
+    {
+        String [] colors = EmoticonMap.rgbForEmoticon(emoticon);
+        int r = Integer.parseInt(colors[0]);
+        int g = Integer.parseInt(colors[1]);
+        int b = Integer.parseInt(colors[2]);
+        colorLights(r,g,b);
+
+    }
 
 
     @Override
@@ -504,7 +513,7 @@ public class ChatActivity extends ActionBarActivity implements IWitListener {
         int r = Integer.parseInt(colors[0]);
         int g = Integer.parseInt(colors[1]);
         int b = Integer.parseInt(colors[2]);
-        colorLights(r,g,b);
+ //       colorLights(r,g,b);
 
         EmotionState emotionState = new EmotionState();
         emotionState.intent = message.intent;

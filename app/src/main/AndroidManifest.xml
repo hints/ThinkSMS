@@ -27,24 +27,25 @@
         <activity
             android:name="com.thinksms.app.ChatActivity"
             android:label="@string/app_name" >
-            <!-- comment here the intent-filter if you want to enable Philips Hue -->
+            <!-- comment here the intent-filter if you want to enable Philips Hue
            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
 
         <activity
             android:name="com.thinksms.app.PHHomeActivity"
             android:label="@string/app_name" >
-            <!-- Uncomment here if you want to enable Philips Hue
+            <!-- Uncomment here if you want to enable Philips Hue -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
+      <!--      -->
         </activity>
 
         <activity

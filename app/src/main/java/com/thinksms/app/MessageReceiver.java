@@ -35,6 +35,8 @@ public class MessageReceiver extends BroadcastReceiver {
             String text = dataObject.getString("text");
             String emoticon = dataObject.getString("emoticon");
 
+            ChatActivity.getInstance().setRgbColorForEmoticon(emoticon);
+
             if (ChatActivity.getInstance().doNotDisturb()) {
                 // Defer notification until do not disturb state changes
                 Message deferredMessage = new Message(text, EmoticonMap.intentForEmoticon(emoticon), null);
